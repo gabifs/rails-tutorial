@@ -85,6 +85,8 @@ GEM
     crass (1.0.6)
     erubi (1.10.0)
     execjs (2.7.0)
+    faker (2.1.2)
+      i18n (>= 0.8)
     ffi (1.14.2)
     ffi (1.14.2-java)
     ffi (1.14.2-x64-mingw32)
@@ -250,6 +252,7 @@ DEPENDENCIES
   bootstrap-sass (= 3.3.6)
   byebug
   capybara (>= 2.15)
+  faker (= 2.1.2)
   jbuilder (~> 2.7)
   listen (~> 3.2)
   pg (= 0.18.4)
