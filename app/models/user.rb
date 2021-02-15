@@ -19,6 +19,11 @@ class User < ApplicationRecord
                     length: { maximum: 255 },
                     format: { with: VALID_EMAIL_REGEX },
                     uniqueness: { case_sensitive: false }
+  VALID_USERNAME_REGEX =/\A[a-z0-9_-]{1,32}$\z/
+  validates :username, presence: true,
+                       length: {maximum:32},
+                       format: {with: VALID_USERNAME_REGEX},
+                       uniqueness: { case_sensitive: false }
   has_secure_password
   validates :password, presence: true, length: {minimum: 6}, allow_nil: true
 
@@ -94,6 +99,11 @@ class User < ApplicationRecord
   # Returns true if the current user is following the other user.
   def following?(other_user)
     following.include?(other_user)
+  end
+
+  # Returns a string representing the object's key suitable for use in URLs
+  def to_param
+    username
   end
 
   private
