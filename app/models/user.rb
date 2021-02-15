@@ -101,6 +101,11 @@ class User < ApplicationRecord
     following.include?(other_user)
   end
 
+  # Returns a string representing the object's key suitable for use in URLs
+  def to_param
+    username
+  end
+
   private
 
     # Converts email to all lower-case
